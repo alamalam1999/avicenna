@@ -5,9 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Blog extends Model
+class Student extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['image','name','gender','nis','tempatlahir','tanggallahir','religion','school','class'];
+    protected $fillable = ['image','name','gender','nis','bornplace','borndate','religion','school','class'];
+
 }

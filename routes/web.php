@@ -1,6 +1,8 @@
 <?php
 
-use App\Http\Controllers\BlogController;
+
+use App\Http\Controllers\StudentController;
+use App\Models\Student;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,4 +21,4 @@ Route::get('/', function () {
 });
 
 
-Route::resource('blog', BlogController::class);
+Route::resource('student', StudentController::class);

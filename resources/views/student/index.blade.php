@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Data Blogs - SantriKoding.com</title>
+    <title>Data Students</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 </head>
@@ -15,7 +15,7 @@
             <div class="col-md-12">
                 <div class="card border-0 shadow rounded">
                     <div class="card-body">
-                        <a href="{{ route('blog.create') }}" class="btn btn-md btn-success mb-3">TAMBAH SISWA</a>
+                        <a href="{{ route('student.create') }}" class="btn btn-md btn-success mb-3">TAMBAH SISWA</a>
                         <table class="table table-bordered">
                             <thead>
                               <tr>
@@ -23,31 +23,31 @@
                                 <th scope="col">NAME</th>
                                 <th scope="col">GENDER</th>
                                 <th scope="col">NIS</th>
-                                <th scope="col">TEMPAT LAHIR</th>
-                                <th scope="col">TANGGAL LAHIR</th>
+                                <th scope="col">BORN PLACE</th>
+                                <th scope="col">BORN DATE</th>
                                 <th scope="col">RELIGION</th>
                                 <th scope="col">SCHOOL</th>
                                 <th scope="col">CLASS</th>
-                                <th scope="col">AKSI</th>
+                                <th scope="col">ACTION</th>
                               </tr>
                             </thead>
                             <tbody>
-                              @forelse ($blogs as $blog)
+                              @forelse ($students as $student)
                                 <tr>
                                     <td class="text-center">
-                                        <img src="{{ Storage::url('public/blogs/').$blog->image }}" class="rounded" style="width: 150px">
+                                        <img src="{{ Storage::url('public/students/').$student->image }}" class="rounded" style="width: 150px">
                                     </td>
-                                    <td>{!! $blog->name !!}</td>
-                                    <td>{!! $blog->gender !!}</td>
-                                    <td>{!! $blog->nis !!}</td>
-                                    <td>{!! $blog->tempatlahir!!}</td>
-                                    <td>{!! $blog->tanggallahir !!}</td>
-                                    <td>{!! $blog->religion !!}</td>
-                                    <td>{!! $blog->school !!}</td>
-                                    <td>{!! $blog->class !!}</td>
+                                    <td>{!! $student->name !!}</td>
+                                    <td>{!! $student->gender !!}</td>
+                                    <td>{!! $student->nis !!}</td>
+                                    <td>{!! $student->bornplace!!}</td>
+                                    <td>{!! $student->borndate !!}</td>
+                                    <td>{!! $student->religion !!}</td>
+                                    <td>{!! $student->school !!}</td>
+                                    <td>{!! $student->class !!}</td>
                                     <td class="text-center">
-                                        <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('blog.destroy', $blog->id) }}" method="POST">
-                                            <a href="{{ route('blog.edit', $blog->id) }}" class="btn btn-sm btn-primary">EDIT</a>
+                                        <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('student.destroy', $student->id) }}" method="POST">
+                                            <a href="{{ route('student.edit', $student->id) }}" class="btn btn-sm btn-primary">EDIT</a>
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-sm btn-danger">HAPUS</button>
@@ -56,12 +56,12 @@
                                 </tr>
                               @empty
                                   <div class="alert alert-danger">
-                                      Data Blog belum Tersedia.
+                                      Data Student belum Tersedia.
                                   </div>
                               @endforelse
                             </tbody>
                           </table>  
-                          {{ $blogs->links() }}
+                          {{ $students->links() }}
                     </div>
                 </div>
             </div>
