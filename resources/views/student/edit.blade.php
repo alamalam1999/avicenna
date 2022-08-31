@@ -83,7 +83,7 @@
                             <div class="form-group">
                                 <label class="font-weight-bold">RELIGION</label>
                                 <select type="text" class="form-control @error('religion') is-invalid @enderror" name="religion" value="{{ old('religion', $student->religion) }}" placeholder="Masukkan religion">
-                                    <option value="Laki-Laki" {{ $student->religion == "Islam" ? 'selected' : '' }}>Islam</option>
+                                    <option value="Islam" {{ $student->religion == "Islam" ? 'selected' : '' }}>Islam</option>
                                     <option value="Kristen" {{ $student->religion == "Kristen" ? 'selected' : '' }}>Kristen</option>
                                     <option value="Katolik" {{ $student->religion == "Katolik" ? 'selected' : '' }}>Katolik</option>
                                     <option value="Hindu" {{ $student->religion == "Hindu" ? 'selected' : '' }}>Hindu</option>
