@@ -102,7 +102,7 @@
                             <div class="form-group">
                                 <label class="font-weight-bold">SCHOOL</label>
                                 <select type="text" class="form-control @error('school') is-invalid @enderror" name="school" value="{{ old('school', $student->school) }}" placeholder="Masukkan school">
-                                    <option value="School" {{ $student->school == "Cinere" ? 'selected' : '' }}>Cinere</option>
+                                    <option value="Cinere" {{ $student->school == "Cinere" ? 'selected' : '' }}>Cinere</option>
                                     <option value="Pamulang" {{ $student->school == "Pamulang" ? 'selected' : '' }}>Pamulang</option>
                                     <option value="Jagakarsa" {{ $student->school == "Jagakarsa" ? 'selected' : '' }}>Jagakarsa</option>
                                 </select>
